@@ -84,7 +84,7 @@ Prompts are predefined, parameterized templates that users can invoke via slash 
 - GPA / CGPA calculator
 - Attendance predictor
 - Deadline reminder
-- Final Academic Summary (Optimized)
+
 
 ### 3.2 Prerequisites
 Before starting the lab, ensure you have:
@@ -185,7 +185,7 @@ if __name__ == "__main__":
 
 ## Part 4: Accessing an MCP Client
 
-We will use **Claude Desktop** as it is 100% free and does not require an API key.
+We will use **Claude Desktop** offers a free tier and supports MCP. and does not require an API key.
 
 1. **Download**: Go to [claude.ai/download](https://claude.ai/download) and install the application for Windows or Mac. 
 2. **Configure MCP**:
