@@ -69,12 +69,20 @@ Prompts are predefined, parameterized templates that users can invoke via slash 
 
 ## Part 3: Step-by-Step Lab Execution
 
-### 3.1 The Smart Academic Assistant Scenario
-Before writing code, it is crucial to understand the **Agentic Workflow** you are building. You will create a Smart Academic Assistant that acts as an autonomous tutor. The workflow operates in the following hierarchical steps:
+### 3.1 Use Case: Building a Smart Academic Assistant
 
-1. **Resource Discovery**: The LLM queries your server for available course materials (e.g., official Stanford YouTube playlists) to anchor its context in ground-truth academic data.
-2. **Context Retrieval**: When a student asks a specific question (e.g., "Summarize lecture 1" or "Generate a quiz"), the LLM dynamically uses a custom **Tool** to fetch the exact video transcript or required data.
-3. **Reasoning & Generation**: The LLM combines the retrieved data with its foundational knowledge to generate highly accurate educational content without hallucinating.
+> [!IMPORTANT]
+> **The Core Usecase**
+> Instead of building a simple chatbot, you are building an **Autonomous Agent**. Your goal in this lab is to create an AI assistant that acts as a personalized tutor for university courses. It will dynamically discover course playlists, pull exact video transcripts, and calculate grades—all without human intervention.
+
+Before writing code, it is crucial to understand the hierarchical flow of the **Agentic Workflow** you are about to build:
+
+1. **Phase 1: Resource Discovery**  
+   The LLM first queries your server for available course materials (e.g., official Stanford YouTube playlists) to anchor its context in ground-truth academic data.
+2. **Phase 2: Context Retrieval**  
+   When a student asks a specific question (e.g., "Summarize lecture 1" or "Generate a quiz"), the LLM dynamically uses a custom **Tool** to fetch the exact video transcript or perform mathematical operations (like calculating a CGPA).
+3. **Phase 3: Reasoning & Generation**  
+   The LLM combines the newly retrieved context with its foundational knowledge to generate highly accurate, course-specific educational content without hallucinating.
 
 ### 3.2 Prerequisites
 Before starting the lab, ensure you have the following installed on your machine:
@@ -166,7 +174,12 @@ def get_lecture_transcript(
     }
     
     return transcripts.get(video_id, f"Error: Transcript not found for video ID {video_id}.")
+```
 
+### Step 4: Adding Prompts (Structured Templates)
+The final primitive allows you to provide pre-built, structured prompt templates directly to the user's AI client.
+
+```python
 @mcp.prompt(
     name="generate_study_guide",
     description="Creates a customized study guide template for a specific course topic."
