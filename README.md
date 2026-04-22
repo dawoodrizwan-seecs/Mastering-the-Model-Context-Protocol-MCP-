@@ -185,7 +185,7 @@ if __name__ == "__main__":
 
 ## Part 4: Accessing an MCP Client
 
-We will use **Claude Desktop** offers a free tier and supports MCP. and does not require an API key.
+We will use **Claude Desktop**, which offers a free tier and supports MCP. It does not require an API key for basic use.
 
 1. **Download**: Go to [claude.ai/download](https://claude.ai/download) and install the application for Windows or Mac. 
 2. **Configure MCP**:
